@@ -20,6 +20,18 @@ class SiteController extends Controller
         return view('welcome');
     }
 
+    public function home(){
+
+        $var1 = 123;
+        $arrayData = [1,2,3,4,5];
+
+        return view('sites.home.index', compact('var1', 'arrayData'));
+    }
+
+    public function contato(){
+        return view('sites.contato.contato');
+    }
+
     public function categoria($idCat){
         return  "ID categoria   {$idCat}";
     }

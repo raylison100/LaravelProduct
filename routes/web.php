@@ -34,12 +34,16 @@
 //    return 'empresa';
 //})->name('empresa');
 
+
 Route::group(['namespace' => 'Sites'], function () {
 
 Route::get('/', 'SiteController@index');
 Route::get('/categoria/{idCat}', 'SiteController@categoria');
 Route::get('/categoria2/{idCat?}', 'SiteController@categoria2');
+Route::get('/home', 'SiteController@home');
+Route::get('/contatos','SiteController@contato');
 
 });
 
+Route::get('/painel/produtos/testes', 'Painel\ProductController@testes');
 Route::resource('/painel/produtos', 'Painel\ProductController');
