@@ -11,39 +11,10 @@
 |
 */
 
-//Route::group(['prefix' => 'painel '], function (){
-//
-//    Route::get('grupo1', function (){
-//        return 'Grupo 1';
-//    });
-//
-//    Route::get('grupo2', function (){
-//        return 'Grupo 2';
-//    });
-//});
-//
-//Route::get('/categoria2/{idCat?}', function ($idCat=null){
-//    return  "ID categoria   {$idCat}";
-//});
-//
-//Route::get('/categoria/{idCat}', function ($idCat){
-//    return  "ID categoria   {$idCat}";
-//});
-//
-//Route::get('/empresa', function (){
-//    return 'empresa';
-//})->name('empresa');
-
-
 Route::group(['namespace' => 'Sites'], function () {
 
-Route::get('/', 'SiteController@index');
-Route::get('/categoria/{idCat}', 'SiteController@categoria');
-Route::get('/categoria2/{idCat?}', 'SiteController@categoria2');
-Route::get('/home', 'SiteController@home');
-Route::get('/contatos','SiteController@contato');
+    Route::get('/', 'SiteController@index');
 
 });
 
-Route::get('/painel/produtos/testes', 'Painel\ProductController@testes');
 Route::resource('/painel/produtos', 'Painel\ProductController');

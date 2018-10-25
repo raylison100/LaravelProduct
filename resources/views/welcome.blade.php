@@ -78,6 +78,10 @@
                 <div class="title m-b-md">
                     CHEGANDO LA POR***
                 </div>
+                <div>
+                    <a href="{{route('produtos.index')}}" class="btn btn-primary" style="margin-bottom: 2px"><span class="glyphicon glyphicon-plus"></span>
+                        PAINEL PRODUTOS</a>
+                </div>
             </div>
         </div>
     </body>

@@ -49,26 +49,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        /*dd($request->all());
-        dd($request->only([
-            'nome', 'description'
-        ]));
-        dd($request->except('_token'));
-        dd($request->input('name'));*/
 
-        //Pegando dados do Formulario
-        $dataForm  = $request->except('_token');
-
-        // Valida dados
-        $this->validate($request,$this->produto->rules);
-
-        // Faz cadastro
-        $insert = $this->produto->create($dataForm);
-
-        if($insert){
-            return redirect()->route('produtos.index');
-        }
-        else return redirect()->back();
     }
 
     /**
@@ -116,59 +97,4 @@ class ProductController extends Controller
         //
     }
 
-    public function testes(){
-        /*
-        $prod =  $this->produto;
-        $prod->name = "Nome do produto";
-        $prod->number = 6549797;
-        $prod->active = true;
-        $prod->category =  'moveis';
-        $prod->description = 'descrução do produto';
-        $insert = $prod->save();
-
-        if($insert)
-            return 'Inserido com sucesso';
-        else
-            return 'Falha ao cadatrar';*/
-
-
-        /*$insert = $this->produto->create([
-
-           'name'       =>'Niojasdhash',
-           'number'     =>8789798,
-           'active'     =>true,
-           'category'   =>'moveis',
-           'description'=>'uaysgdyagdiyasidyasuydiausdfyayisdiasfdiytaf'
-        ]);
-
-        if($insert)
-            return "Inserido com sucesso, ID: {$insert->id}";
-        else
-            return 'Falha ao cadatrar';*/
-
-/*
-      //  $prod = $this->produto->where('number',65467986 );
-        $prod = $this->produto->find(5);
-        $update = $prod->update([
-                'name'      => 'Update Teste',
-                'number'    => 65467986,
-                'active'    => true,
-        ]);
-
-        if($update)
-            return "Atualizado  com sucesso, ID: {$prod->id}";
-        else
-            return 'Falha ao atualizar';
-        */
-
-        $prod = $this->produto->find(4);
-        $delete = $prod->delete();
-
-        if($delete){
-            return "deletado com sucesso";
-        }else {
-            return "Não encontrado";
-        }
-
-    }
 }
