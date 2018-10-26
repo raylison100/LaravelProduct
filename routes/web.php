@@ -11,10 +11,6 @@
 |
 */
 
-Route::group(['namespace' => 'Sites'], function () {
-
-    Route::get('/', 'SiteController@index');
-
-});
-
+//Route::get('/teste', 'Painel\ProductController@teste');
+Route::get('/','Painel\ProductController@index');
 Route::resource('/painel/produtos', 'Painel\ProductController');
